@@ -8,23 +8,21 @@ import { ApiService } from './../Services/api.service';
 })
 export class MainComponent implements OnInit {
 
-  public allusers: any = [];
-  public allvehicles: any = [];
-  public allplanets: any = [];
-  public selectedPlanets: any = [];
-  public vehicles: any = [];
-  public count: any = [];
-  public page = 0;
-  public counter = 1;
-  public dataCount = 1;
-  public vehecalsPilots: any = [];
-  public  SelectedVehecal: any = [];
-    constructor(public api: ApiService) {}
+    public allusers: any = [];
+    public allvehicles: any = [];
+    public allplanets: any = [];
+    public selectedPlanets: any = [];
+    public vehicles: any = [];
+    public counter = 1;
+    public vehecalsPilots: any = [];
+    public  SelectedVehecal: any = [];
+  constructor(public api: ApiService) {}
 
     ngOnInit() {
 
      this.getPeople(1);
     }
+    // Aggregate all people data from api working through pagination //
     getPeople(count) {
       this.counter = count;
         this.api.GetData('https://swapi.dev/api/people/?page=' + this.counter).then(
@@ -42,7 +40,7 @@ export class MainComponent implements OnInit {
           }
         );
     }
-
+// Aggregate all vehicles data from api working through pagination //
     getVehicles(count) {
        let page = count;
         this.api.GetData('https://swapi.dev/api/vehicles/?page=' + page).then(
@@ -60,6 +58,7 @@ export class MainComponent implements OnInit {
           }
         );
     }
+    // Aggregate all planets data from api working through pagination and select planets from main array//
     getPlanets(count) {
       let page = count;
        this.api.GetData('https://swapi.dev/api/planets/?page=' + page).then(
@@ -78,10 +77,13 @@ export class MainComponent implements OnInit {
          }
        );
    }
+   // Filter colbeck for select planets list //
    planetsFilter(n) {
      const list = ['Tatooine', 'Alderaan', 'Naboo', 'Bespin', 'Endor'];
         return list.includes(n);
    }
+   // Filter and Aggregate final array contain pilots and home planets for all vehicles, //
+   // select vehicle this largest population sum on home planets of pilots //
     filterData() {
                 for (let i = 0 ; this.allvehicles.length > i; i ++) {
                   this.allvehicles[i].pilots = this.allusers.filter(x => x.vehicles.includes(this.allvehicles[i].url));
