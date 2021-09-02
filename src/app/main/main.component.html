@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid my-jumbotron ">
+    <div class="container text-center p-2">
+        <h1 class="display-4">Star Wars Test</h1>
+        <p class="lead">Thanks to swapi.co</p>
+    </div>
+</div>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12 mb-5 mt-2">
+            <h3 class="text-center my-5 pb-4">Part 1: Vehecal With The Largest Population Sum</h3>
+            <app-info *ngIf="SelectedVehecal.length > 0" [SelectedVehecal]="SelectedVehecal"></app-info>
+            <app-loader *ngIf="SelectedVehecal.length === 0" class="w-50 d-flex m-auto"></app-loader>
+        </div>
+        <div class="col-12 row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <h3 class="text-center my-3">Part 2: Planets Population</h3>
+                <app-chart *ngIf="selectedPlanets.length === 5" [selectedPlanets]="selectedPlanets"></app-chart>
+                <app-loader *ngIf="selectedPlanets.length !== 5" class="w-50 d-flex m-auto"></app-loader>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>

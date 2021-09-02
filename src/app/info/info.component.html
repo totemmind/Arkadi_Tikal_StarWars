@@ -1,0 +1,25 @@
+<table class="table w-75 table-striped table-bordered my-table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Vehecal Name</th>
+            <th scope="col">Planets and population</th>
+            <th scope="col">Related pilots names</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{SelectedVehecal.name}}</td>
+            <td>
+                <ul class="list-group">
+                    <li *ngFor="let homeworld of SelectedVehecal.homeworld; let i = index">{{homeworld.name}}: {{homeworld.population}}</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="list-group">
+                    <li *ngFor="let pilot of SelectedVehecal.pilots; let i = index">{{pilot.name}}</li>
+                </ul>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

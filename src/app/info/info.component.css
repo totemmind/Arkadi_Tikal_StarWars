@@ -1,0 +1,8 @@
+.my-table {
+    margin: 10px auto 20px;
+    border: 1px solid #cccccc;
+}
+
+.list-group li {
+    list-style: none;
+}

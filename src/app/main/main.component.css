@@ -1,0 +1,21 @@
+.my-jumbotron {
+    background: #000821;
+    background: -moz-linear-gradient(top, #000821 0%, #292e3a 100%);
+    background: -webkit-linear-gradient(top, #000821 0%, #292e3a 100%);
+    background: linear-gradient(to bottom, #000821 0%, #292e3a 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000821', endColorstr='#292e3a', GradientType=0);
+    color: rgb(255, 187, 0);
+    text-shadow: 1px 2px #000;
+}
+
+.page-link {
+    color: rgb(255, 187, 0);
+    background-color: #000821;
+    border: 1px solid #292e3a;
+}
+
+.active .page-link {
+    color: #000821 !important;
+    background-color: rgb(255, 187, 0) !important;
+    border: 1px solid rgb(255, 187, 0)!important;
+}
